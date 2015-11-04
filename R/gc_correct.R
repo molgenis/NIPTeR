@@ -18,7 +18,6 @@
 #'@return Depending on the input object either a NIPTSample or a NIPTControlGroup object 
 #'
 #'@export
-#'
 gc_correct <- function(nipt_object, method = "LOESS", include_XY = F, span =0.75, 
                        ref_genome = "hg37"){
   if(class(nipt_object)[1] == NIPT_sample_class){

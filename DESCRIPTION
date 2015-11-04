@@ -1,14 +1,22 @@
 Package: NIPTeR
 Type: Package
 Encoding: UTF-8
-Title: R Package for Non-Invasive Prenatal Testing analysis
-Version: 1.0
-Date: 2015-09-09
+Title: R Package for Non-Invasive Prenatal Testing Analysis
+Version: 1.0.01
+Date: 2015-11-04
 Author: Dirk de Weerd
-Maintainer: Dirk de Weerd <dirkdeweerd.work@gmail.com>
-Description: NIPT analysis package containing in addition to existing variation reduction and trisomy prediction methods like LOESS GC correct and NCV prediction method novel algorithms.
-Imports: Rsamtools, sets, S4Vectors
-Depends: R (>= 3.1.0)
+Maintainer: Lennart Johansson <l.johansson@umcg.nl>
+Description: Fast and accurate trisomy prediction in non-invasive prenatal
+    testing.
+Imports:
+    Rsamtools,
+    sets,
+    S4Vectors
+Depends:
+    R (>= 3.1.0)
 License: GNU Lesser General Public License
-Suggests: knitr, pander
+Suggests:
+    knitr,
+    pander
 VignetteBuilder: knitr
+RoxygenNote: 5.0.0
