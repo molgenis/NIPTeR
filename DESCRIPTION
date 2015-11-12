@@ -1,14 +1,16 @@
 Package: NIPTeR
 Type: Package
 Encoding: UTF-8
-Title: R Package for Non-Invasive Prenatal Testing Analysis
-Version: 1.0.01
+Title: Fast and Accurate Trisomy Prediction in Non-Invasive Prenatal
+    Testing
+Version: 1.0.0
 Date: 2015-11-04
 Author: Dirk de Weerd
 Maintainer: Lennart Johansson <l.johansson@umcg.nl>
 Description: Fast and accurate trisomy prediction in non-invasive prenatal
     testing.
 Imports:
+    stats,
     Rsamtools,
     sets,
     S4Vectors

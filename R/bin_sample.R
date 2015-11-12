@@ -9,10 +9,15 @@
 #' Load and bin BAM file 
 #' 
 #' Load a BAM file and count reads in bins of size 50.000 base pairs
-#'
 #'@import sets
 #'@import Rsamtools
 #'@import S4Vectors
+#'@importFrom stats lm
+#'@importFrom stats loess
+#'@importFrom stats median
+#'@importFrom stats predict
+#'@importFrom stats sd
+#'@importFrom stats shapiro.test
 #'@param bam_filepath Character The location and filename on the file system where the bam file is stored
 #'@param do_sort Boolean Sort the bam file? If the bam is unsorted set to true, 
 #'but the use of pre-sorted bam files is recommended.
