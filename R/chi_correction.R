@@ -63,6 +63,17 @@ correctbins = function(bins, chisumbins, degrees_of_freedom, chi_cutoff){
 #'to extract the corrected sample use \code{$sample} or \code{[[1]]}. 
 #'To extract the control group from the list use
 #'\code{$control_group} or \code{[[2]]}
+#'
+#'@examples 
+#' \dontrun{
+#' ##Apply chi-squared based variation reduction method
+#' chi_corrected_data <- chicorrect(nipt_sample = gc_LOESS_corrected_sample, 
+#'                                  nipt_control_group = subset_loess_corrected_control_group)
+#' ##Extract sample and control group
+#' loess_chi_corrected_sample <- chi_corrected_data$sample
+#' subset_loess_chi_corrected_control_group <- chi_corrected_data$control_group
+#' }
+#' 
 #'@export
 chi_correct <- function(nipt_sample, nipt_control_group, chi_cutoff = 3.5, include_XY = F){
   degrees_of_freedom  = length(nipt_control_group[[samples]]) - 1

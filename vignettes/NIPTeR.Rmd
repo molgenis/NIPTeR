@@ -680,3 +680,8 @@ ncv_score_21 <- calculate_ncv_score(nipt_sample = sample_of_interest, ncv_templa
 
 ```
 <br>
+
+#Contact
+For information contact:
+Lennart Johansson: l.johansson@umcg.nl
+Morris Swertz: m.a.swertz@gmail.com

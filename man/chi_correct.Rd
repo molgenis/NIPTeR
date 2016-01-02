@@ -36,4 +36,15 @@ total score is converted to a normal distribution. Corresponding bins with a nor
 above _chi_cutoff_ (default 3.5) are corrected by dividing the number of reads by the total 
 chi-squared score divided by degrees of freedom
 }
+\examples{
+\dontrun{
+##Apply chi-squared based variation reduction method
+chi_corrected_data <- chicorrect(nipt_sample = gc_LOESS_corrected_sample, 
+                                 nipt_control_group = subset_loess_corrected_control_group)
+##Extract sample and control group
+loess_chi_corrected_sample <- chi_corrected_data$sample
+subset_loess_chi_corrected_control_group <- chi_corrected_data$control_group
+}
+
+}
 

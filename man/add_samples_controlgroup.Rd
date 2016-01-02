@@ -18,4 +18,16 @@ NIPTControlGroup object
 This functions adds NIPTSample objects to an existing control group and returns a new 
 NIPTControlGroup object.
 }
+\examples{
+\dontrun{
+##First bin the new sample
+new_binned_sample <- bin_bam_sample(bam_filepath = "/path/to/file.bam", 
+                                    separate_strands = T)
+
+##Then add the sample to the control group
+new_control_group <- add_samples_controlgroup(nipt_control_group = my_control_group, 
+                                              samples_to_add = new_binned_sample)
+}
+
+}
 

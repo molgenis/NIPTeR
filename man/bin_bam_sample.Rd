@@ -46,4 +46,20 @@ either be \emph{Uncorrected} or \emph{GC Corrected} and/or \emph{Chi Corrected}.
 \item Character \strong{sample_name} Sample name 
 }
 }
+\examples{
+\dontrun{
+##To process a single sample
+binned_sample <- bin_bam_sample(bam_filepath = "/path/to/file.bam", 
+                                separate_strands = T)
+
+##To create a control group out of a set of bam files
+bam_filepaths <- list.files(path = "/Path/to/bamfiles/", 
+                            pattern = ".bam", full.names = T)
+
+control_group  <- as_control_group(nipt_samples = lapply(X = bam_filepaths, 
+                                   bin_bam_sample, do_sort = F, 
+                                   separate_strands = T))
+}
+
+}
 

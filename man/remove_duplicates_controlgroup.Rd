@@ -19,4 +19,10 @@ Removes all duplicate samples in control group by samplename.
 This functions removes duplicate samples from the control group based on name. 
 It returns a new NIPTControlGroup object.
 }
+\examples{
+\dontrun{
+new_control_group <- remove_duplicates_controlgroup(nipt_control_group = old_control_group)
+}
+
+}
 

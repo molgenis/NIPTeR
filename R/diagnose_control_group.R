@@ -15,6 +15,12 @@
 #'\item \strong{control_group_statistics} Matrix with mean, standard deviation and P value of Shapiro-Wilk test
 #'}
 #'@return named list
+#'
+#'@examples 
+#' \dontrun{
+#' diagnose_control_group(nipt_control_group = control_group)
+#' }
+#' 
 #'@export
 diagnose_control_group <- function(nipt_control_group){
   fracs <- sapply(nipt_control_group[[samples]], chrfractions)

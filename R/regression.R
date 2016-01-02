@@ -84,6 +84,13 @@ GetNextPredictor <- function(samples, frac_reads_chr_trisomy_observed, predictor
 #'}
 #'
 #'@return RegressionResult object
+#'
+#'@examples 
+#' \dontrun{
+#' regression_score_21 <- perform_regression(nipt_sample = sample_of_interest, 
+#'                        nipt_control_group = control_group, chromo_focus = 21)
+#' }
+#' 
 #'@export
 perform_regression <- function(nipt_sample, nipt_control_group, chromo_focus, n_models = 4, n_predictors = 4,
                                exclude_chromosomes = NULL, include_chromosomes = NULL,

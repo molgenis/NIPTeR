@@ -41,4 +41,12 @@ analysis
 \item string \strong{sample_name} The sample_name of the sample of interest
 }
 }
+\examples{
+\dontrun{
+z_score_result_13 <- calculate_z_score(nipt_sample = sample_of_interest, 
+                                       nipt_control_group = control_group, 
+                                       chromo_focus = 13)
+}
+
+}
 

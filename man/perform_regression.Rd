@@ -82,4 +82,11 @@ However, every autosomal chromosome can be predicted
 \item \strong{additional_statistics} Statistics for both the practical and theoretical CVs for every prediction set
 }
 }
+\examples{
+\dontrun{
+regression_score_21 <- perform_regression(nipt_sample = sample_of_interest, 
+                       nipt_control_group = control_group, chromo_focus = 21)
+}
+
+}
 

@@ -26,6 +26,13 @@
 #'
 #'@return ZscoreResult object
 #'
+#'@examples 
+#' \dontrun{
+#' z_score_result_13 <- calculate_z_score(nipt_sample = sample_of_interest, 
+#'                                        nipt_control_group = control_group, 
+#'                                        chromo_focus = 13)
+#' }
+#'
 #'@export
 calculate_z_score <- function(nipt_sample, nipt_control_group, chromo_focus){
   control_group_fractions <- sapply(X = nipt_control_group[[samples]], FUN = chrfractions)

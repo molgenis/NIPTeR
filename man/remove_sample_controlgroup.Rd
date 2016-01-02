@@ -24,4 +24,11 @@ Note that this function uses a regular expression, and if more sample_names
 satisfy the regular expression, they will also be removed. It returns a new 
 NIPTControlGroup object.
 }
+\examples{
+\dontrun{
+new_control_group <- remove_sample_controlgroup(samplename = unwanted_sample, 
+                                                nipt_control_group = old_control_group)
+}
+
+}
 

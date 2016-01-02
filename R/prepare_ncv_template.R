@@ -69,6 +69,15 @@ CalculateVariation <- function(denominators, chromosomal_frac_control_reads, chr
 #'
 #'@return ncv template object
 #'
+#'@examples 
+#' \dontrun{
+#' ##Create NCVTemplates for chromosome 13 with max 9 denominators and default settings, so:
+#' ##All autosomals chromosomes are potential predictors, 
+#' ##except the potential trisomic chromosomes 13, 18 and 21
+#' new_ncv_template_13 <- prepare_ncv(nipt_control_group = control_group, 
+#'                                    chr_focus = 13, max_elements = 9)
+#' }
+#'
 #'@references
 #'\href{http://www.ncbi.nlm.nih.gov/pubmed/21519036}{Sehnert et al.} 
 #'

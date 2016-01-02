@@ -23,6 +23,18 @@
 #'The output for mode \emph{report} is a matrix with a single column containing the sum of squares
 #'in ascending order.
 #' 
+#' @examples 
+#' \dontrun{
+#' ##Mode report
+#' scores_control_group <- matchcontrolgroup(nipt_sample = sample_of_interest, 
+#'                                           nipt_control_group = control_group, 
+#'                                           mode = "report", include_chromosomes = c(13,18))
+#'
+#' ##Mode subset
+#' subset_control_group <- matchcontrolgroup(nipt_sample = sample_of_interest, 
+#'                                           nipt_control_group = control_group, 
+#'                                           mode = "subset", n_of_samples = 50)
+#' } 
 #' 
 #' 
 #' @export
