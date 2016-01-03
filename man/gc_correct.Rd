@@ -33,4 +33,15 @@ region and the GC content of this region. In NIPTeR, two GC bias correction algo
 have been implemented, the LOESS based method introduced by Chen et al. (2011) and the bin 
 weight based method described by Fan and Quake (2010).
 }
+\examples{
+\dontrun{
+##Correct NIPTSample object using LOESS method
+loess_corrected_sample <- gc_correct(nipt_object = sample_of_interest, method = "LOESS",
+                                     include_XY = F, span = 0.75)
+##Correct NIPTControlGroup object using bin method
+gc_bin_corrected_control_group <- gc_correct(nipt_object = control_group, method = "bin", 
+                                             include_XY = T)
+}
+
+}
 

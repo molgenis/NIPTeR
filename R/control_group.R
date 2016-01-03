@@ -28,6 +28,16 @@
 #'
 #'@return NIPTControlGroup object
 #'
+#'@examples 
+#' \dontrun{
+#' ##Retrieve filenames
+#' bam_filepaths <- list.files(path = "/Path/to/bamfiles/", pattern = ".bam", full.names = T)
+#' ##Load files and convert to control group
+#' control_group  <- as_control_group(nipt_samples = lapply(X = bam_filepaths, bin_bam_sample, 
+#'                                                          do_sort = F, separate_strands = FALSE))
+#' ##Save control group for later
+#' saveRDS(object = control_group, file = "/Path/to/directory/control_group.rds")
+#' }
 #'@export
 as_control_group <- function(nipt_samples, control_group_type = generic_control_group){
 #   if (length(unique(sapply(nipt_samples, getsamplenames))) != length(nipt_samples)){
@@ -60,6 +70,12 @@ as_control_group <- function(nipt_samples, control_group_type = generic_control_
 #'
 #'@return NIPTControlGroup object
 #'
+#'@examples 
+#' \dontrun{
+#' new_control_group <- remove_sample_controlgroup(samplename = unwanted_sample, 
+#'                                                 nipt_control_group = old_control_group)
+#' }
+#'
 #'@export
 remove_sample_controlgroup <- function(samplename, nipt_control_group){
   indices <- grep(pattern = samplename, x = sapply(nipt_control_group[[samples]], getsamplenames))
@@ -81,6 +97,11 @@ remove_sample_controlgroup <- function(samplename, nipt_control_group){
 #'It returns a new NIPTControlGroup object.
 #'@return NIPTControlGroup object
 #'
+#'@examples 
+#' \dontrun{
+#' new_control_group <- remove_duplicates_controlgroup(nipt_control_group = old_control_group)
+#' }
+#'
 #'@export
 remove_duplicates_controlgroup <- function(nipt_control_group){
   indices <- which(duplicated(sapply(nipt_control_group[[samples]], getsamplenames)))
@@ -95,6 +116,17 @@ remove_duplicates_controlgroup <- function(nipt_control_group){
 #'@param samples_to_add A list with sample(s) to add. This always needs to be a list
 #'
 #'@return NIPTControlGroup object
+#'
+#'@examples 
+#' \dontrun{
+#' ##First bin the new sample
+#' new_binned_sample <- bin_bam_sample(bam_filepath = "/path/to/file.bam", 
+#'                                     separate_strands = T)
+#' 
+#' ##Then add the sample to the control group
+#' new_control_group <- add_samples_controlgroup(nipt_control_group = my_control_group, 
+#'                                               samples_to_add = new_binned_sample)
+#' }
 #'
 #'@export
 add_samples_controlgroup <- function(nipt_control_group, samples_to_add){

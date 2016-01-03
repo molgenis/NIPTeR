@@ -38,4 +38,19 @@ The matchcontrolgroup function determines how well an NIPTSample fits within the
 The `matchcontrolgroup` function determines how well an NIPTSample fits within the NIPTControlGroup
 and, if needed, makes a subset `NIPTControlGroup` of length \emph{n}.
 }
+\examples{
+\dontrun{
+##Mode report
+scores_control_group <- matchcontrolgroup(nipt_sample = sample_of_interest, 
+                                          nipt_control_group = control_group, 
+                                          mode = "report", include_chromosomes = c(13,18))
+
+##Mode subset
+subset_control_group <- matchcontrolgroup(nipt_sample = sample_of_interest, 
+                                          nipt_control_group = control_group, 
+                                          mode = "subset", n_of_samples = 50)
+} 
+
+
+}
 

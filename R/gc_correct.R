@@ -17,6 +17,16 @@
 #'weight based method described by Fan and Quake (2010). 
 #'@return Depending on the input object either a NIPTSample or a NIPTControlGroup object 
 #'
+#'@examples 
+#' \dontrun{
+#' ##Correct NIPTSample object using LOESS method
+#' loess_corrected_sample <- gc_correct(nipt_object = sample_of_interest, method = "LOESS",
+#'                                      include_XY = F, span = 0.75)
+#' ##Correct NIPTControlGroup object using bin method
+#' gc_bin_corrected_control_group <- gc_correct(nipt_object = control_group, method = "bin", 
+#'                                              include_XY = T)
+#' }
+#' 
 #'@export
 gc_correct <- function(nipt_object, method = "LOESS", include_XY = F, span =0.75, 
                        ref_genome = "hg37"){

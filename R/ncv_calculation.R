@@ -9,6 +9,13 @@
 #'
 #'@return ncv_result object
 #'
+#'@examples 
+#' \dontrun{
+#' ##Use NCVTemplate to get NCV scores for the sample of interest
+#' ncv_score_13 <- calculate_ncv_score(nipt_sample = sample_of_interest, 
+#'                                     ncv_template = new_ncv_template_13)
+#' }
+#'
 #'@references
 #'\href{http://www.ncbi.nlm.nih.gov/pubmed/21519036}{Sehnert et al.} 
 #'

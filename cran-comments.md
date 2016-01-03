@@ -1,3 +1,9 @@
+## Update v1.0.1 2015-12-29
+This is a minor update: In this version I have:
+
+Added contact information to vignette
+Added examples to the function information fields (\dontrun{}, since large datasets would be necessary to test)
+
 ## Resubmission
 This is a resubmission (2). In this version I have:
 

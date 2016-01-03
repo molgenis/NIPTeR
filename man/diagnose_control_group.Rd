@@ -27,4 +27,10 @@ The function returns a named list with 3 fields:
 \item \strong{control_group_statistics} Matrix with mean, standard deviation and P value of Shapiro-Wilk test
 }
 }
+\examples{
+\dontrun{
+diagnose_control_group(nipt_control_group = control_group)
+}
+
+}
 

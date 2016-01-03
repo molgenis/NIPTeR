@@ -39,4 +39,15 @@ A control group object with duplicate samples or samples with different
 correction statusses is possible but not recommended and will generate a 
 warning message.
 }
+\examples{
+\dontrun{
+##Retrieve filenames
+bam_filepaths <- list.files(path = "/Path/to/bamfiles/", pattern = ".bam", full.names = T)
+##Load files and convert to control group
+control_group  <- as_control_group(nipt_samples = lapply(X = bam_filepaths, bin_bam_sample, 
+                                                         do_sort = F, separate_strands = FALSE))
+##Save control group for later
+saveRDS(object = control_group, file = "/Path/to/directory/control_group.rds")
+}
+}
 
