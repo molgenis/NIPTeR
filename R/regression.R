@@ -224,9 +224,9 @@ PredictTrisomy <- function(predictors, nipt_sample,  chromo_focus,  control_grou
   
   ratio_train <- mod$fitted.values / frac_reads_chr_trisomy_observed_train
   
-  cv_train <- sd(ratio_train) / mean(ratio_train)
+  cv_train <- stats::sd(ratio_train) / mean(ratio_train)
   
-  cv.prac <- sd(ratio) / mean(ratio)
+  cv.prac <- stats::sd(ratio) / mean(ratio)
  
   cvs <- c(cv.theo, cv.prac)
   names(cvs) <- c(theoretical, practical)

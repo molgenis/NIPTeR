@@ -10,7 +10,7 @@ author: "Lennart F. Johansson & Hendrik A. de Weerd"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{NIPTeR: fast and accurate trisomy prediction in non-invasive prenatal testing}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---

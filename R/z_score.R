@@ -41,7 +41,7 @@ calculate_z_score <- function(nipt_sample, nipt_control_group, chromo_focus){
   sample_fractions <- setrownamesmatrix((sample_fractions))
   chromo_focus_fractions <- getstats(fractions = control_group_fractions, chromo_focus = chromo_focus)
   mean_control <- mean(chromo_focus_fractions)
-  sd_control <-  sd(chromo_focus_fractions)
+  sd_control <-  stats::sd(chromo_focus_fractions)
   sample_focus_fractions <- getstats(fractions = sample_fractions, chromo_focus = chromo_focus)
   sample_score <- unname((sample_focus_fractions - mean_control) /sd_control)
   control_scores <- scale(chromo_focus_fractions)
