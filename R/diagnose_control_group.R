@@ -47,5 +47,5 @@ get_abberant_scores <- function(row, score_matrix){
   c(dimnames(score_matrix)[[1]][row[1]], dimnames(score_matrix)[[2]][row[2]], score_matrix[row[1], row[2]])
 }
 get_mean_sd_shapiro <- function(row){
-  c(mean = mean(row), SD = sd(row), Shapiro_P_value = shapiro.test(row)$p.value)
+  c(mean = mean(row), SD = stats::sd(row), Shapiro_P_value = shapiro.test(row)$p.value)
 }

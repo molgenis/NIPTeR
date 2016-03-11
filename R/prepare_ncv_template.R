@@ -5,11 +5,11 @@ CalculateVariation <- function(denominators, chromosomal_frac_control_reads, chr
   possible_denominators <- unlist(denominators)
   if (length(possible_denominators) == 1){
     mean_subset <- mean(chromosomal_frac_control_reads[chr_focus,] / chromosomal_frac_control_reads[possible_denominators,])
-    sd_subset <- sd((chromosomal_frac_control_reads[chr_focus,] / (chromosomal_frac_control_reads[possible_denominators,])))
+    sd_subset <- stats::sd((chromosomal_frac_control_reads[chr_focus,] / (chromosomal_frac_control_reads[possible_denominators,])))
   }
   else{
     mean_subset <- mean(chromosomal_frac_control_reads[chr_focus,] / (colSums(chromosomal_frac_control_reads[possible_denominators,])))
-    sd_subset <- sd(chromosomal_frac_control_reads[chr_focus,] / (colSums(chromosomal_frac_control_reads[possible_denominators,])))
+    sd_subset <- stats::sd(chromosomal_frac_control_reads[chr_focus,] / (colSums(chromosomal_frac_control_reads[possible_denominators,])))
   }
   return(list(sd_subset , mean_subset))
 }
@@ -123,7 +123,7 @@ prepare_ncv <- function(nipt_control_group, chr_focus, max_elements, exclude_chr
                                      nipt_sample_names = sapply(nipt_control_group[[samples]], getsamplenames),
                                      correction_status = unique(nipt_control_group[[correction_status_autosomal_chromosomes]]), 
                                      scores = scores, potential_denominators = control_chromosomes,
-                                     statistics = c(mean = mean(ncv_reads), SD = sd(ncv_reads), 
+                                     statistics = c(mean = mean(ncv_reads), SD = stats::sd(ncv_reads), 
                                                     Shapiro_Wilk_P_value = shapiro.test(scores$NCVscore)$p.value),
                                      type = class(nipt_control_group)[2])
   }
@@ -136,11 +136,11 @@ prepare_ncv <- function(nipt_control_group, chr_focus, max_elements, exclude_chr
                                      nipt_sample_names = sapply(nipt_control_group[[samples]], getsamplenames),
                                      correction_status = unique(nipt_control_group[[correction_status_autosomal_chromosomes]]), 
                                      scores = scores, potential_denominators = control_chromosomes,
-                                     statistics = c(mean = mean(ncv_reads), SD = sd(ncv_reads), 
+                                     statistics = c(mean = mean(ncv_reads), SD = stats::sd(ncv_reads), 
                                                     Shapiro_Wilk_P_value = shapiro.test(scores$NCVscore)$p.value),
                                      type = class(nipt_control_group)[2], 
                                      sample_names_train_set = sapply(nipt_control_group_train[[samples]], getsamplenames),
-                                     train_set_statistics = c(mean = mean(ncv_reads_train), SD = sd(ncv_reads_train), 
+                                     train_set_statistics = c(mean = mean(ncv_reads_train), SD = stats::sd(ncv_reads_train), 
                                                               Shapiro_Wilk_P_value = shapiro.test(scores_train$NCVscore)$p.value),
                                      train_set_Zscores = scores_train)  
   }
@@ -157,10 +157,10 @@ get_ncv_reads <- function(chromosomal_frac_control_reads, chr_focus, denominator
   }
 }
 ZScoresControl <- function(denominators, ncv_reads, chr_focus, samplenames){
-  scores <- as.data.frame((ncv_reads - mean(ncv_reads)) / sd(ncv_reads), row.names = samplenames)  
+  scores <- as.data.frame((ncv_reads - mean(ncv_reads)) / stats::sd(ncv_reads), row.names = samplenames)  
   colnames(scores) <- "NCVscore"
   return(scores)
 }
 get_ncv_statistics <- function(ncv_reads){
-  return(c(mean(ncv_reads), sd(ncv_reads)))
+  return(c(mean(ncv_reads), stats::sd(ncv_reads)))
 }
