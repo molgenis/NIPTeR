@@ -21,6 +21,6 @@ Workflow examples and components overview are included in the NIPTeR vignette.
 
 Literature
 ---------------------
-NIPTeR methods are discribed in our [paper](https://www.nature.com/articles/s41598-017-02031-5).
+NIPTeR methods are described in our [paper](https://www.nature.com/articles/s41598-017-02031-5).
 
 Johansson, L.F, de Boer, E.N., de Weerd, H.A., van Dijk, F., Elferink, M.G., Schuring-Blom, G.H., Suijkerbuijk, R.F., Sinke, R.J., te Meerman G.J., Sijmons, R.H., Swertz, M.A. and Sikkema-Raddatz, B. “Novel Algorithms for Improved Sensitivity in Non-Invasive Prenatal Testing,” Sci. Rep., vol. 7, no. 1, p. 1838, 2017.
