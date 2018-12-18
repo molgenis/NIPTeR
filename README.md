@@ -23,4 +23,10 @@ Literature
 ---------------------
 NIPTeR methods are described in our [paper](https://www.nature.com/articles/s41598-017-02031-5).
 
-Johansson, L.F, de Boer, E.N., de Weerd, H.A., van Dijk, F., Elferink, M.G., Schuring-Blom, G.H., Suijkerbuijk, R.F., Sinke, R.J., te Meerman G.J., Sijmons, R.H., Swertz, M.A. and Sikkema-Raddatz, B. “Novel Algorithms for Improved Sensitivity in Non-Invasive Prenatal Testing,” Sci. Rep., vol. 7, no. 1, p. 1838, 2017.
+Johansson L.F, de Boer E.N., de Weerd H.A., van Dijk F., Elferink M.G., Schuring-Blom G.H., Suijkerbuijk R.F., Sinke R.J., te Meerman G.J., Sijmons R.H., Swertz M.A. and Sikkema-Raddatz B. “Novel Algorithms for Improved Sensitivity in Non-Invasive Prenatal Testing,” Sci. Rep., vol. 7, no. 1, p. 1838, 2017.
+
+Implementation of the NIPTeR package is described in our [paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2557-8)
+
+Johansson L. F., de Weerd H. A., de Boer E. N., van Dijk F. , te Meerman G. J., Sijmons R. H., Sikkema-Raddatz B. , and Swertz M. A. , “NIPTeR : an R package for fast and accurate trisomy prediction in non-invasive prenatal testing,” BMC Bioinformatics, vol. 19, no. 531, pp. 1–5, 2018.
+
+A step-by-step use case is added to this paper as Additional file 1. This case makes use of the test samples provided in this git repository.
