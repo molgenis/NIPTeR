@@ -18,6 +18,7 @@ EXAMPLES AND OVERVIEW
 ---------------------
 
 Workflow examples and components overview are included in the NIPTeR vignette.
+
 A step-by-step use case is added to the NIPTeR package paper as Additional file 1. This case makes use of the test samples provided in this git repository.
 
 Literature
