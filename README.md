@@ -18,6 +18,7 @@ EXAMPLES AND OVERVIEW
 ---------------------
 
 Workflow examples and components overview are included in the NIPTeR vignette.
+A step-by-step use case is added to the NIPTeR package paper as Additional file 1. This case makes use of the test samples provided in this git repository.
 
 Literature
 ---------------------
@@ -28,5 +29,3 @@ Johansson L.F, de Boer E.N., de Weerd H.A., van Dijk F., Elferink M.G., Schuring
 Implementation of the NIPTeR package is described in our [paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2557-8)
 
 Johansson L.F., de Weerd H.A., de Boer E.N., van Dijk F., te Meerman G.J., Sijmons R.H., Sikkema-Raddatz B. and Swertz M.A. , “NIPTeR : an R package for fast and accurate trisomy prediction in non-invasive prenatal testing,” BMC Bioinformatics, vol. 19, no. 531, pp. 1–5, 2018.
-
-A step-by-step use case is added to this paper as Additional file 1. This case makes use of the test samples provided in this git repository.
