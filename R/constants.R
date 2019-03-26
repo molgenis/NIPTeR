@@ -39,7 +39,6 @@ n.predictors <- 4
 
 bin_size <- 50000
 
-
 rownames_combined_autosomal <- as.character(autosomal_chromosomes)
 rownames_combined_sex <- XY
 rownames_separated_forward_autosomal <- paste0(autosomal_chromosomes, "F")

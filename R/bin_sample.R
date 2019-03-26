@@ -88,6 +88,22 @@ bin_bam_sample <- function(bam_filepath, do_sort=FALSE, separate_strands=FALSE, 
   splitted_chromos <- split(x = chromos, f = droplevels(strands[strands != "*"]))
   binned_reads <- list()
   message("Binning")
+
+  bamheader <- Rsamtools::scanBamHeader(bam_filepath)
+  chromosomes <- names(bamheader$`bam_filepath`[1]$targets)
+  bin_sequence <- sapply(X=c(paste0("chr",1:22), paste0("chr", c("X","Y"))),FUN=function(x)which(chromosomes==x))
+  
+    #Remove "chr" from chromosome names if it is there
+  bamheader <- sub(pattern = "chr", replacement = "", x = bamheader)
+  #Does the sequence of the header match 1:22, X, Y?
+  if (!all(bamheader[1:24] == c(1:22, "X", "Y"))){
+    #If not, find the indexes of 1:22, X, Y
+    bin_sequence <- sapply(X = c(1:22, "X", "Y"), FUN = function(x)which(bamheader == x))
+    #Put the chromosomes in the correct sequence
+    splitted_reads[[1]] <- splitted_reads[[1]][bin_sequence]
+    splitted_reads[[2]] <- splitted_reads[[2]][bin_sequence]
+  }
+  
   binned_reads[[1]] <- bin_reads(reads_data_frame = splitted_reads[[1]], chroms = splitted_chromos[[1]])
   binned_reads[[2]] <- bin_reads(reads_data_frame = splitted_reads[[2]], chroms = splitted_chromos[[2]])
   message("Binning done")

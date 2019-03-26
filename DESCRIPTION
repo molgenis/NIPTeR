@@ -3,8 +3,8 @@ Type: Package
 Encoding: UTF-8
 Title: Fast and Accurate Trisomy Prediction in Non-Invasive Prenatal
     Testing
-Version: 1.0.2
-Date: 2016-03-09
+Version: 1.0.2.2
+Date: 2019-03-21
 Author: Dirk de Weerd, Lennart Johansson
 Maintainer: Lennart Johansson <l.johansson@umcg.nl>
 Description: Fast and Accurate Trisomy Prediction in Non-Invasive Prenatal

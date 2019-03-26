@@ -38,3 +38,17 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTES. 
+
+##Update Sosa
+Added to constants.R 
+bin_sequence <-
+  structure(c(20L, 27L, 28L, 30L, 33L, 37L, 42L, 44L, 47L, 1L, 
+              2L, 4L, 5L, 6L, 7L, 8L, 10L, 15L, 17L, 23L, 24L, 26L, 92L, 93L
+  ), .Names = c("chr1", "chr2", "chr3", "chr4", "chr5", "chr6", 
+                "chr7", "chr8", "chr9", "chr10", "chr11", "chr12", "chr13", "chr14", 
+                "chr15", "chr16", "chr17", "chr18", "chr19", "chr20", "chr21", 
+                "chr22", "chrX", "chrY"))
+
+Changed splitted reads in bin_sample.R
+  splitted_reads[[1]] <- splitted_reads[[1]][bin_sequence]
+  splitted_reads[[2]] <- splitted_reads[[2]][bin_sequence]
