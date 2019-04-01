@@ -88,8 +88,16 @@ bin_bam_sample <- function(bam_filepath, do_sort=FALSE, separate_strands=FALSE, 
   splitted_chromos <- split(x = chromos, f = droplevels(strands[strands != "*"]))
   binned_reads <- list()
   message("Binning")
-  binned_reads[[1]] <- bin_reads(reads_data_frame = splitted_reads[[1]], chroms = splitted_chromos[[1]])
-  binned_reads[[2]] <- bin_reads(reads_data_frame = splitted_reads[[2]], chroms = splitted_chromos[[2]])
+  
+  bamheader <- Rsamtools::scanBamHeader(bam_filepath)
+  bamheader <- names(bamheader[[1]]$targets)
+ 
+  binned_reads[[1]] <- bin_reads(reads_data_frame = splitted_reads[[1]], 
+                                 chroms = splitted_chromos[[1]], 
+                                 bamheader = bamheader)
+  binned_reads[[2]] <- bin_reads(reads_data_frame = splitted_reads[[2]], 
+                                 chroms = splitted_chromos[[2]], 
+                                 bamheader = bamheader)
   message("Binning done")
   
   if (separate_strands == FALSE){
@@ -104,13 +112,24 @@ bin_bam_sample <- function(bam_filepath, do_sort=FALSE, separate_strands=FALSE, 
   return(new_sample)
 }
 
-bin_reads <- function(reads_data_frame, chroms){
+bin_reads <- function(reads_data_frame, chroms, bamheader){
   n_bins <- getbins(max(reads_data_frame), bin_size)
   bin <- matrix(data = 0, nrow = 0, ncol = n_bins , dimnames = list(NULL, 1:n_bins))
   if ((length(unique(chroms[1:100]))) != 1){
     stop("BAM file appears to be unsorted", call. = F)
   }
   chromos <- rle(x = as.numeric(chroms))
+  
+  #Remove "chr" from chromosome names if it is there
+  bamheader <- sub(pattern = "chr", replacement = "", x = bamheader)
+  #Does the sequence of the header match 1:22, X, Y?
+  if (!all(bamheader[1:24] == c(1:22, "X", "Y"))){
+    print("De volgorde van de chromosomes staan niet goed")
+    #If not, find the indexes of 1:22, X, Y
+    bin_sequence <- sapply(X = c(1:22, "X", "Y"), FUN = function(x)which(bamheader == x))
+    chromos$lengths <- chromos$lengths[bin_sequence]
+  }
+  
   min_read <- 0
   max_read <- 1
   for (chromo in 1:n_total_chromosomes){

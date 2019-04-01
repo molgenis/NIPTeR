@@ -1,3 +1,8 @@
+##Update v1.0.3 2019-04-01
+This is a minor update: In this version I have:
+changed the bin_sample.R script to be able to process lexicographically sorted bam files.
+
+
 ## Update v1.0.2 2016-03-09
 This is a minor update: In this version I have:
 
@@ -8,6 +13,7 @@ diagnose_control_group.R
 prepare_ncv_template.R
 regression.R
 z_score.R
+
 
 ## Update v1.0.1 2015-12-29
 This is a minor update: In this version I have:
