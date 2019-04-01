@@ -124,7 +124,6 @@ bin_reads <- function(reads_data_frame, chroms, bamheader){
   bamheader <- sub(pattern = "chr", replacement = "", x = bamheader)
   #Does the sequence of the header match 1:22, X, Y?
   if (!all(bamheader[1:24] == c(1:22, "X", "Y"))){
-    print("De volgorde van de chromosomes staan niet goed")
     #If not, find the indexes of 1:22, X, Y
     bin_sequence <- sapply(X = c(1:22, "X", "Y"), FUN = function(x)which(bamheader == x))
     chromos$lengths <- chromos$lengths[bin_sequence]
