@@ -44,3 +44,4 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTES. 
+

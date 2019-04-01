@@ -98,6 +98,7 @@ bin_bam_sample <- function(bam_filepath, do_sort=FALSE, separate_strands=FALSE, 
   binned_reads[[2]] <- bin_reads(reads_data_frame = splitted_reads[[2]], 
                                  chroms = splitted_chromos[[2]], 
                                  bamheader = bamheader)
+
   message("Binning done")
   
   if (separate_strands == FALSE){
