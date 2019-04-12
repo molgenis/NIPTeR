@@ -6,3 +6,4 @@
 ^README\.md$
 ^README-.*\.png$
 ^cran-comments\.md$
+^test_samples/
